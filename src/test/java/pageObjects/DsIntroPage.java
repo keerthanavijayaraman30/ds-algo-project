@@ -35,4 +35,9 @@ public class DsIntroPage {
 		{
 			driver.findElement(runbtn).click();
 		}
+		//
+		
+		public void test() {
+			
+		}
 }
