@@ -2,15 +2,16 @@ package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.RegistrationPage;
 import pageObjects.signinPage;
-import utilities.DriverFactory;
+import utilities.DriverFactory_Thread;
 
-public class LoginStepDef extends DriverFactory {
+public class LoginStepDef {
 	
 	WebDriver driver;
 	signinPage sp;
@@ -18,8 +19,8 @@ public class LoginStepDef extends DriverFactory {
 	
 	
 	public LoginStepDef() {
-		setWebDriver();
-		this.driver = getDriver();
+		
+		this.driver = DriverFactory_Thread.getDriver();
 		sp = new signinPage(driver);
 		rp = new RegistrationPage(driver);
 	}	
@@ -54,5 +55,10 @@ public class LoginStepDef extends DriverFactory {
 	    sp.valloggedinpage();
 	}
 
+	@After() 
+	public void tearDown() 
+	 {
+		DriverFactory_Thread.quitDriver(); 
+	 }
 	
 }

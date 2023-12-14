@@ -7,15 +7,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.RegistrationPage;
-import utilities.DriverFactory;
+import utilities.DriverFactory_Thread;
 
-public class OpenPortalStepDef extends DriverFactory {
+public class OpenPortalStepDef  {
 	WebDriver driver;
 	RegistrationPage rp;
 	
 	public OpenPortalStepDef() {
-		setWebDriver();
-		this.driver = getDriver();
+	
+		this.driver = DriverFactory_Thread.getDriver();
 		 rp = new RegistrationPage(driver);
 		 
 		 

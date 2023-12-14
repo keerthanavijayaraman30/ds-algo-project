@@ -1,6 +1,9 @@
 package StepDefinitions;
 import org.openqa.selenium.WebDriver;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,19 +13,24 @@ import pageObjects.RegistrationPage;
 import pageObjects.signinPage;
 import utilities.DriverFactory;
 
-public class DSintroStepDef extends DriverFactory {
+public class DSintroStepDef  {
 	
 	WebDriver driver;
 	RegistrationPage rp;
 	DsIntroPage dsintro;
 	signinPage sp;
 	
-	public DSintroStepDef() {
-		setWebDriver();
-		this.driver = getDriver();
+	@Before()
+	public void setup(){
+		
 		rp = new RegistrationPage(driver);
 		dsintro = new DsIntroPage(driver);
 		sp = new signinPage(driver);
+	}
+	
+	public DSintroStepDef() {
+		this.driver = DriverFactory.getDriver();
+		
 	}	
 	
 	@Given("User clicks the Get Started button")
@@ -50,16 +58,23 @@ public class DSintroStepDef extends DriverFactory {
 	@Then("validate the python editor code")
 	public void validate_the_python_editor_code() {
 		
+		dsintro.enterText();
 	   
 	}
 
 	@And("click the run button and check the output")
 	public void click_the_run_button_and_check_the_output() {
 									
-	    
+	    dsintro.runbtn();
 	}
+	
+	
+	  @AfterAll() public static void before_or_after_all() {
+	  DriverFactory.quitDriver(); }
+	 
 
-
-
-
+	
+	/*
+	 * @After public void tearDown() { DriverFactory.quitDriver(); }
+	 */
 }

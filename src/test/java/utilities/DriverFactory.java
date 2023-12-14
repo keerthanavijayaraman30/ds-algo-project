@@ -7,21 +7,28 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class DriverFactory {
-	public WebDriver driver;
+	private static WebDriver driver;
 	
-	
-	public void setWebDriver() {
-		 driver = new ChromeDriver();
-		 driver.manage().window().maximize();
-		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		 driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+	private DriverFactory() {
+		
 	}
 	
-	public WebDriver getDriver() {
+	
+	public static void setWebDriver() {
+		
+	}
+	
+	public static WebDriver getDriver() {
+		if(driver == null) {
+			 driver=new ChromeDriver();
+			 driver.manage().window().maximize();
+			 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+			 driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+		}
 		return driver;
 	}
 	
-	public void quitDriver () {
+	public static void quitDriver () {
 		driver.quit();
 	}
 	

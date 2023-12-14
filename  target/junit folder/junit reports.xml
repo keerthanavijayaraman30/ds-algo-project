@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="5.969" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="Login functionality" name=" - Example #1.1" time="2.675">
-<system-out><![CDATA[
-Given User clicks the Signin link...........................................passed
-When user gives correct "keerv" and "Heat6er@123"...........................passed
-And clicks the login button.................................................passed
-Then The user should be redirected to Homepage with the text displayed as You are logged in.passed
-]]></system-out>
-</testcase>
-<testcase classname="Data Structures - Introduction" name="Locate the Data Structures - Introduction module" time="3.196">
+<testsuite name="Cucumber" time="18.059" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="Data Structures - Introduction" name="Locate the Data Structures - Introduction module" time="6.456">
 <system-out><![CDATA[
 Given User clicks the Get Started button....................................passed
 When when user the clicks the time complexity link..........................passed
+And user clicks try here>>>.................................................passed
+Then validate the python editor code........................................passed
+And click the run button and check the output...............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Stack module page functionality" name="Locate the Stack module firststack  link" time="11.273">
+<system-out><![CDATA[
+Given Click the word stack from dropdown Datastructures.....................passed
+When when user the clicks the operations in stack link......................passed
 And user clicks try here>>>.................................................passed
 Then validate the python editor code........................................passed
 And click the run button and check the output...............................passed

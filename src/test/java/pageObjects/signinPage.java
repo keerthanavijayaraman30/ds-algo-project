@@ -17,6 +17,7 @@ By uname = By.id("id_username");
 By userPass = By.xpath(".//input[@name='password']");
 By loggedintext = By.xpath(".//html/.//div[contains(text(),'You are logged in')]");
 
+
 public void signLink()
 {
 	driver.findElement(signinlnk).click();

@@ -8,16 +8,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.RegistrationPage;
-import utilities.DriverFactory;
+import utilities.DriverFactory_Thread;
 
-public class RegStepDef extends DriverFactory {
+public class RegStepDef  {
 
 	WebDriver driver;
 	RegistrationPage rp;
 
 	public RegStepDef() {
-		setWebDriver();
-		this.driver = getDriver();
+		this.driver = DriverFactory_Thread.getDriver();
 		rp = new RegistrationPage(driver);
 	}
 
@@ -44,10 +43,10 @@ public class RegStepDef extends DriverFactory {
 	}
 
 	
-	// @After() 
-	// public void tearDown() 
-	 //{
-		// quitDriver(); 
-	// }
+	@After() 
+	public void tearDown() 
+	 {
+		DriverFactory_Thread.quitDriver(); 
+	 }
 	
 }

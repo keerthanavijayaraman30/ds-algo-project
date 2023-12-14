@@ -6,7 +6,7 @@
   
   @RunWith(Cucumber.class)
   
-  @CucumberOptions(features={"src/test/resources/Features/03Login.feature",
+  @CucumberOptions(features={"src/test/resources/Features/07Stack.feature",
 		  "src/test/resources/Features/04DS_Intro.feature"},
   glue={"StepDefinitions"}, monochrome = true, plugin =
   {"pretty","html:target/html folder/html reports.html",
